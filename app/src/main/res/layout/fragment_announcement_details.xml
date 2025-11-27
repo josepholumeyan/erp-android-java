@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="22dp"
+    android:background="#121212">
+
+    <!-- Title label -->
+    <TextView
+        android:id="@+id/announcement_title_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textColor="#808080"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Actual announcement title -->
+    <TextView
+        android:id="@+id/announcement_title_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Loaded from Java"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/announcement_title_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Content label -->
+    <TextView
+        android:id="@+id/announcement_content_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/content"
+        android:textColor="#808080"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/announcement_title_tv" />
+
+    <!-- Actual announcement content -->
+    <TextView
+        android:id="@+id/announcement_content_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Loaded from Java"
+        android:textSize="15sp"
+        android:textColor="#F1F1F1"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/announcement_content_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/close_btn"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/close_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#6BFB2B"
+        android:elevation="6dp"
+        android:text="@string/close"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

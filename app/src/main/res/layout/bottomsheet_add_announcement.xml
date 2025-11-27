@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#1E1E1E">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/announcement_title_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textColor="#6BFB2B"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/announcement_title_input"
+        app:layout_constraintStart_toStartOf="@+id/announcement_title_input" />
+
+    <!-- Content -->
+    <EditText
+        android:id="@+id/announcement_title_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#6BFB2B"
+        android:hint="@string/enter_title"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#888888"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/announcement_content_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/content"
+        android:textColor="#6BFB2B"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/announcement_content_input"
+        app:layout_constraintStart_toStartOf="@+id/announcement_content_input" />
+
+    <EditText
+        android:id="@+id/announcement_content_input"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#6BFB2B"
+        android:gravity="top"
+        android:hint="@string/enter_announcement"
+        android:inputType="textMultiLine"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#888888"
+        app:layout_constraintEnd_toEndOf="@+id/announcement_title_input"
+        app:layout_constraintStart_toStartOf="@+id/announcement_title_input"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_title_input" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/make_announcement_btn"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#6BFB2B"
+        android:elevation="6dp"
+        android:text="@string/make_announcement"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/announcement_content_input"
+        app:layout_constraintStart_toStartOf="@+id/announcement_content_input"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_content_input" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

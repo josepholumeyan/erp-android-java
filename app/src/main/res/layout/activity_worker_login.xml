@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#52646464"
+    android:backgroundTint="#CDCFD1"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-78dp"
+    android:visibility="visible"
+    tools:visibility="visible">
+
+
+    <TextView
+        android:id="@+id/worker_login_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/worker_login"
+        android:textColor="#242424"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/worker_id_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/worker_id"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        tools:text="@string/worker_id" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worker_login_header">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/worker_id_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/worker_id_hint"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="230dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/worker_pin_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/Worker_password_input1"
+        app:layout_constraintStart_toStartOf="@+id/Worker_password_input1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/worker_login_button"
+        android:layout_width="300dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#0A3DB4"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/Worker_password_input1"
+        app:layout_constraintStart_toStartOf="@+id/Worker_password_input1"
+        app:layout_constraintTop_toBottomOf="@+id/Worker_password_input1" />
+
+    <TextView
+        android:id="@+id/worker_login_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/worker_login_button"
+        app:layout_constraintStart_toStartOf="@+id/worker_login_button"
+        app:layout_constraintTop_toBottomOf="@+id/worker_login_button" />
+
+    <EditText
+        android:id="@+id/Worker_password_input1"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="@string/admin_password_hint"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

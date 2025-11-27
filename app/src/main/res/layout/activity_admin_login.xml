@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CB121212"
+    android:backgroundTint="#010307"
+    android:visibility="visible"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-78dp"
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/admin_login_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/admin_login"
+        android:textColor="#FFFCFC"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_login_header">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/admin_id_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/admin_id_hint"
+            android:textColorHint="@color/white"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="230dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/admin_password_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/password"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/admin_passsword_input"
+        app:layout_constraintStart_toStartOf="@+id/admin_passsword_input" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/admin_login_button"
+        android:layout_width="300dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#0A3DB4"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/admin_passsword_input"
+        app:layout_constraintStart_toStartOf="@+id/admin_passsword_input"
+        app:layout_constraintTop_toBottomOf="@+id/admin_passsword_input" />
+
+    <TextView
+        android:id="@+id/admin_login_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/admin_login_button"
+        app:layout_constraintStart_toStartOf="@+id/admin_login_button"
+        app:layout_constraintTop_toBottomOf="@+id/admin_login_button" />
+
+    <EditText
+        android:id="@+id/admin_passsword_input"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="58dp"
+        android:ems="10"
+        android:hint="@string/admin_password_hint"
+        android:inputType="textPassword"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <TextView
+        android:id="@+id/Admin_id_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/admin_id"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

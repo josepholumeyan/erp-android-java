@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/apply_for_loan_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/loan_application"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Amount_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/how_much_do_you_want_to_loan"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worker_debt" />
+
+    <TextView
+        android:id="@+id/Loan_reason_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/why_do_you_need_the_loan"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Loan_period_input"
+        app:layout_constraintTop_toBottomOf="@+id/Loan_period_input" />
+
+    <TextView
+        android:id="@+id/months_to_repay_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/how_many_months_will_it_take_you_to_pay_back"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Loan_Amount_input"
+        app:layout_constraintTop_toBottomOf="@+id/Loan_Amount_input" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Apply_loan_button"
+        android:layout_width="300dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#3F9D1E"
+        android:text="@string/apply"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Loan_reason_input" />
+
+    <EditText
+        android:id="@+id/Loan_Amount_input"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/enter_the_loan_amount"
+        android:inputType="number"
+        android:textColorHint="#434242"
+        app:layout_constraintStart_toStartOf="@+id/Amount_header"
+        app:layout_constraintTop_toBottomOf="@+id/Amount_header" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/months_to_repay_header"
+        app:layout_constraintTop_toBottomOf="@+id/months_to_repay_header">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/Loan_reason_input"
+        android:layout_width="289dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/give_a_short_and_concise_reason"
+        android:inputType="text"
+        android:textColorHint="#2E2D2D"
+        app:layout_constraintStart_toStartOf="@+id/Loan_reason_header"
+        app:layout_constraintTop_toBottomOf="@+id/Loan_reason_header" />
+
+    <TextView
+        android:id="@+id/worker_Salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/salary_50_000"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apply_for_loan_title" />
+
+    <TextView
+        android:id="@+id/worker_debt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/debt_15_000"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/worker_Salary"
+        app:layout_constraintTop_toBottomOf="@+id/worker_Salary" />
+
+    <TextView
+        android:id="@+id/Last_loan_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/you_haven_t_applied_for_a_loan_yet"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Apply_loan_button" />
+
+    <AutoCompleteTextView
+        android:id="@+id/Loan_period_input"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/select_the_amount_of_months"
+        android:textColorHint="#353434"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CB121212">
+
+    <ImageView
+        android:id="@+id/Admin_profile_image"
+        android:layout_width="201dp"
+        android:layout_height="205dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:drawable/alert_light_frame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_person_24" />
+
+    <TextView
+        android:id="@+id/No_of_worker_in_dept"
+        android:layout_width="185dp"
+        android:layout_height="56.6dp"
+        android:text="@string/wokers_in_department_20"
+        android:textAlignment="viewStart"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Admin_profile_image"
+        app:layout_constraintTop_toTopOf="@+id/Admin_profile_image" />
+
+    <TextView
+        android:id="@+id/No_of_pending_loans"
+        android:layout_width="0dp"
+        android:layout_height="56.6dp"
+        android:text="@string/pending_loans_12"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/No_of_pending_vacations"
+        app:layout_constraintEnd_toEndOf="@+id/No_of_worker_in_dept"
+        app:layout_constraintStart_toStartOf="@+id/No_of_worker_in_dept"
+        app:layout_constraintTop_toBottomOf="@+id/No_of_worker_in_dept" />
+
+    <TextView
+        android:id="@+id/No_of_pending_vacations"
+        android:layout_width="0dp"
+        android:layout_height="56.6dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/pending_vacations_12"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Admin_profile_image"
+        app:layout_constraintEnd_toEndOf="@+id/No_of_pending_loans"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/No_of_pending_loans" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Admin_loan_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/loan"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/Admin_vacation_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_profile_image" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Admin_vacation_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/vacation"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Admin_loan_btn"
+        app:layout_constraintTop_toTopOf="@+id/Admin_loan_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Admin_worker_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/workers"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/Admin_payroll_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/Admin_loan_btn"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_loan_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Admin_announcements_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/announcements"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/logout_button"
+        app:layout_constraintStart_toStartOf="@+id/Admin_worker_btn"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_worker_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logout_button"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#D00606"
+        android:text="@string/logout"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Admin_payroll_button"
+        app:layout_constraintStart_toEndOf="@+id/Admin_announcements_btn"
+        app:layout_constraintTop_toTopOf="@+id/Admin_announcements_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Admin_payroll_button"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/payroll"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Admin_vacation_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Admin_worker_btn"
+        app:layout_constraintTop_toTopOf="@+id/Admin_worker_btn" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recent_workers_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/Recent_workers_heading"
+        app:layout_constraintTop_toBottomOf="@+id/Recent_workers_heading"
+        tools:listitem="@layout/item_worker" />
+
+    <TextView
+        android:id="@+id/Recent_workers_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/recent_workers"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/Admin_announcements_btn"
+        app:layout_constraintTop_toBottomOf="@+id/Admin_announcements_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

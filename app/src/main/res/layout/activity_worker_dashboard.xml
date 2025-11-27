@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DrawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menu_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#52646464"
+        android:backgroundTint="#CDCFD1">
+
+        <!-- Text Info -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/drawer_button"
+            android:layout_width="84dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="16dp"
+            android:background="#52646464"
+            android:text="@string/Menu"
+            android:textAlignment="gravity"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:backgroundTint="#CDCFD1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="159dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@string/profile_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/baseline_person_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profileImage"
+            app:layout_constraintTop_toTopOf="@+id/profileImage">
+
+
+            <TextView
+                android:id="@+id/workerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/john_doe"
+                android:textColor="@color/black"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="228dp"
+                tools:layout_editor_absoluteY="85dp" />
+
+            <TextView
+                android:id="@+id/workerDepartment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/operations"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="239dp"
+                tools:layout_editor_absoluteY="134dp" />
+
+            <TextView
+                android:id="@+id/workerRole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/supervisor"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="239dp"
+                tools:layout_editor_absoluteY="175dp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/worker_checkin_btn"
+            android:layout_width="130dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/check_in"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#136D03"
+            app:layout_constraintEnd_toStartOf="@+id/worker_checkout_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/worker_checkout_btn"
+            android:layout_width="130dp"
+            android:layout_height="65dp"
+            android:text="@string/check_out"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:backgroundTint="#850505"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/worker_checkin_btn"
+            app:layout_constraintTop_toTopOf="@+id/worker_checkin_btn" />
+            <!-- Announcement Section -->
+
+        <TextView
+            android:id="@+id/announcementLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:paddingStart="16dp"
+            android:paddingTop="24dp"
+            android:text="@string/announcements"
+            android:textColor="#232D5D"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profileImage"
+            app:layout_constraintTop_toBottomOf="@+id/worker_checkin_btn" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/announcement_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/announcementLabel"
+            tools:listitem="@layout/item_announcement" />
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="64dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/workerNavigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@android:color/white"
+        app:menu="@menu/worker_drawer_menu"
+        app:headerLayout="@layout/nav_header_worker"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>

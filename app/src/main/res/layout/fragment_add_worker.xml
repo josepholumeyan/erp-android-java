@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1000000"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <EditText
+        android:id="@+id/worker_name_input"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/enter_worker_s_name"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="#D5D4D4"
+        app:layout_constraintEnd_toStartOf="@+id/worker_gender_input"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/worker_gender_input"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/enter_worker_s_gender"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="#D5D4D4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/worker_name_input"
+        app:layout_constraintTop_toTopOf="@+id/worker_name_input" />
+
+    <EditText
+        android:id="@+id/worker_department_input"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="@string/enter_worker_s_department"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="#D5D4D4"
+        app:layout_constraintEnd_toStartOf="@+id/worker_age_input"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worker_name_input" />
+
+    <EditText
+        android:id="@+id/worker_role_input"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="@string/enter_worker_s_role"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="#D5D4D4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worker_password_input" />
+
+    <EditText
+        android:id="@+id/bank_account_input"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/enter_worker_s_bank_account"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="#D5D4D4"
+        app:layout_constraintEnd_toStartOf="@+id/worker_salary_input"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worker_department_input" />
+
+    <EditText
+        android:id="@+id/worker_password_input"
+        android:layout_width="393dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="@string/worker_is_advised_to_change_entered_password"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="#D5D4D4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bank_account_input" />
+
+    <EditText
+        android:id="@+id/worker_age_input"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/enter_worker_s_age"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="#D5D4D4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/worker_department_input"
+        app:layout_constraintTop_toTopOf="@+id/worker_department_input" />
+
+    <EditText
+        android:id="@+id/worker_salary_input"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/enter_worker_s_salary"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="#D5D4D4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bank_account_input"
+        app:layout_constraintTop_toTopOf="@+id/bank_account_input" />
+
+    <CheckBox
+        android:id="@+id/is_admin_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/isadmin"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/worker_role_input"
+        app:layout_constraintTop_toTopOf="@+id/worker_role_input" />
+
+    <TextView
+        android:id="@+id/name_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/worker_name_input"
+        app:layout_constraintStart_toStartOf="@+id/worker_name_input" />
+
+    <TextView
+        android:id="@+id/age_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/age"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/worker_age_input"
+        app:layout_constraintStart_toStartOf="@+id/worker_age_input" />
+
+    <TextView
+        android:id="@+id/password_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/worker_password_input"
+        app:layout_constraintStart_toStartOf="@+id/worker_password_input" />
+
+    <TextView
+        android:id="@+id/department_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/department"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/worker_department_input"
+        app:layout_constraintStart_toStartOf="@+id/worker_department_input" />
+
+    <TextView
+        android:id="@+id/Role_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/role"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/worker_role_input"
+        app:layout_constraintStart_toStartOf="@+id/worker_role_input" />
+
+    <TextView
+        android:id="@+id/bank_account_header2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bank_account"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/bank_account_input"
+        app:layout_constraintStart_toStartOf="@+id/bank_account_input" />
+
+    <TextView
+        android:id="@+id/salary_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salary"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/worker_salary_input"
+        app:layout_constraintStart_toStartOf="@+id/worker_salary_input" />
+
+    <TextView
+        android:id="@+id/gender_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/worker_gender_input"
+        app:layout_constraintStart_toStartOf="@+id/worker_gender_input" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/admin_create_worker_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="196dp"
+        android:backgroundTint="#2A8105"
+        android:text="@string/create_worker"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cancel_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cancel_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#CE1313"
+        android:text="@string/cancel"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/admin_create_worker_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worker_role_input" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

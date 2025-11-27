@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC000000"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/info_worker_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Worker Name"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Worker_image"
+        app:layout_constraintTop_toTopOf="@+id/Worker_image" />
+
+    <TextView
+        android:id="@+id/info_worker_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ID: 123"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/info_worker_name"
+        app:layout_constraintStart_toStartOf="@+id/info_worker_name"
+        app:layout_constraintTop_toBottomOf="@id/info_worker_name" />
+
+    <TextView
+        android:id="@+id/info_worker_dept"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Admin"
+        android:textColor="@android:color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/dept_header"
+        app:layout_constraintTop_toBottomOf="@+id/dept_header" />
+
+    <TextView
+        android:id="@+id/info_worker_role"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Manager"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/info_worker_age"
+        app:layout_constraintStart_toStartOf="@+id/role_header"
+        app:layout_constraintTop_toBottomOf="@+id/role_header" />
+
+    <Button
+        android:id="@+id/delete_worker_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#EF2C2C"
+        android:text="@string/delete_worker"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/Worker_image"
+        android:layout_width="161dp"
+        android:layout_height="157dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:contentDescription="@string/worker_profile_picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_person_24" />
+
+    <TextView
+        android:id="@+id/dept_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/department"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/Worker_image"
+        app:layout_constraintTop_toBottomOf="@+id/Worker_image" />
+
+    <TextView
+        android:id="@+id/info_worker_salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$10,000"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/salary_header"
+        app:layout_constraintTop_toBottomOf="@+id/salary_header" />
+
+    <TextView
+        android:id="@+id/salary_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/salary"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/dept_header"
+        app:layout_constraintTop_toBottomOf="@+id/info_worker_dept" />
+
+    <TextView
+        android:id="@+id/info_worker_debt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$1,000"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/debt_header"
+        app:layout_constraintTop_toBottomOf="@+id/debt_header" />
+
+    <TextView
+        android:id="@+id/worker_attendanceScore_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="$1,000"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/info_worker_salary"
+        app:layout_constraintTop_toBottomOf="@+id/info_worker_salary" />
+
+    <TextView
+        android:id="@+id/role_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="@string/role"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@+id/dept_header"
+        app:layout_constraintTop_toTopOf="@+id/dept_header" />
+
+    <TextView
+        android:id="@+id/debt_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/debt"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/role_header"
+        app:layout_constraintTop_toBottomOf="@+id/info_worker_role" />
+
+    <TextView
+        android:id="@+id/attendance_score_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attendance Score"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/worker_attendanceScore_view"
+        app:layout_constraintStart_toStartOf="@+id/worker_attendanceScore_view" />
+
+    <TextView
+        android:id="@+id/info_worker_age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="AGE: 20"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/info_worker_id"
+        app:layout_constraintStart_toStartOf="@+id/info_worker_id"
+        app:layout_constraintTop_toBottomOf="@+id/info_worker_id" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

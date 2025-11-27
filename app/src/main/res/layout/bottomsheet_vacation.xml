@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/end_date_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="End date of vacation"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+    <TextView
+        android:id="@+id/apply_for_vacation_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/vacation_application"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Days_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Start date of vacation"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worker_vacation_days" />
+
+    <TextView
+        android:id="@+id/Vacation_reason_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/why_are_you_taking_a_vacation"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/text_input_layout4"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Apply_vacation_button"
+        android:layout_width="300dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#3F9D1E"
+        android:text="@string/apply"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Vacation_reason_input" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="select Date"
+        app:layout_constraintStart_toStartOf="@+id/Days_header"
+        app:layout_constraintTop_toBottomOf="@+id/Days_header">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/start_date_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="136dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="select Date"
+        app:layout_constraintStart_toStartOf="@+id/end_date_header"
+        app:layout_constraintTop_toBottomOf="@+id/end_date_header">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/end_date_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="136dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/Vacation_reason_input"
+        android:layout_width="289dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/give_a_short_and_concise_reason"
+        android:inputType="text"
+        android:textColorHint="#2E2D2D"
+        app:layout_constraintStart_toStartOf="@+id/Vacation_reason_header"
+        app:layout_constraintTop_toBottomOf="@+id/Vacation_reason_header" />
+
+    <TextView
+        android:id="@+id/worker_vacation_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/vacation_days_left_80"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apply_for_vacation_title" />
+
+    <TextView
+        android:id="@+id/Last_vacation_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/you_havent_applied_for_a_vacaton_yet"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Apply_vacation_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
