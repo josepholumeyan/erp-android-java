@@ -53,7 +53,7 @@ public class AdminVacationActivity extends AppCompatActivity {
             @Override
             public void onVacationClicked(int vacationId) {
 
-                VacationInfoFragment fragment = VacationInfoFragment.newInstance(vacationId);
+                VacationInfoFragment fragment = VacationInfoFragment.newInstance(vacationId, AdminId);
 
                 getSupportFragmentManager()
                         .beginTransaction()

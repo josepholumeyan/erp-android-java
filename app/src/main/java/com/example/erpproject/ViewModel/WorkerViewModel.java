@@ -5,17 +5,22 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.erpproject.data.entity.Salary;
+import com.example.erpproject.data.entity.User;
 import com.example.erpproject.data.entity.Worker;
+import com.example.erpproject.repository.UserRepository;
 import com.example.erpproject.repository.WorkerRepository;
 
 import java.util.List;
 public class WorkerViewModel extends AndroidViewModel {
     private final WorkerRepository repository;
+    private final UserRepository userRepository;
     private final LiveData<List<Worker>> allWorkers;
 
     public WorkerViewModel(@NonNull Application application) {
         super(application);
         repository = new WorkerRepository(application);
+        userRepository = new UserRepository(application);
         allWorkers = repository.getAllWorkers();
     }
 
@@ -51,6 +56,23 @@ public class WorkerViewModel extends AndroidViewModel {
     public void deleteAllWorkers() {
         repository.deleteAllWorkers();
     }
+
+    public User getUserById(String id) {
+        return userRepository.getUserByWorkerId(id);
+    }
+
+    public void updateUser(User user) {
+        userRepository.updateUser(user);
+    }
+
+    public Salary getSalaryRecordForWorker(String workerId) {
+        return repository.getSalaryRecordForWorker(workerId);
+    }
+
+    public void updateSalary(Salary salary) {
+        repository.updateSalary(salary);
+    }
+
 
     public int getWorkerCountByDept(String dept) {
         return repository.getWorkerCountByDepartment(dept);

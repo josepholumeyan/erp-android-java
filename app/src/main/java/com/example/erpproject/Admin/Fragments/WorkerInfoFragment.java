@@ -17,17 +17,17 @@ import com.example.erpproject.ViewModel.WorkerViewModel;
 public class WorkerInfoFragment extends Fragment {
 
     private static final String ARG_WORKER_ID = "worker_id";
-
+    private static final String ARG_ADMIN_ID = "Admin_Id";
     private TextView nameView, idView, deptView, roleView, ageView, salaryView, debtView,attendanceScoreView;
-    private Button deleteBtn;
-
+    private Button deleteBtn, updateBtn;
     private String workerId;
     private WorkerViewModel workerViewModel;
 
-    public static WorkerInfoFragment newInstance(String workerId) {
+    public static WorkerInfoFragment newInstance(String workerId, String AdminId) {
         WorkerInfoFragment fragment = new WorkerInfoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_WORKER_ID, workerId);
+        args.putString(ARG_ADMIN_ID, AdminId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -45,6 +45,7 @@ public class WorkerInfoFragment extends Fragment {
         salaryView = view.findViewById(R.id.info_worker_salary);
         debtView = view.findViewById(R.id.info_worker_debt);
         deleteBtn = view.findViewById(R.id.delete_worker_btn);
+        updateBtn = view.findViewById(R.id.update_worker_btn);
         attendanceScoreView = view.findViewById(R.id.worker_attendanceScore_view);
         ;
 
@@ -74,6 +75,17 @@ public class WorkerInfoFragment extends Fragment {
             Toast.makeText(requireContext(), "Worker deleted", Toast.LENGTH_SHORT).show();
             requireActivity().getSupportFragmentManager().popBackStack();
         });
+        updateBtn.setOnClickListener(v -> {
+            UpdateWorkerFragment fragment = UpdateWorkerFragment.newInstance(getArguments().getString(ARG_ADMIN_ID), workerId);
+
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .addToBackStack(null)
+                    .commit();
+
+        });
+
 
         return view;
     }

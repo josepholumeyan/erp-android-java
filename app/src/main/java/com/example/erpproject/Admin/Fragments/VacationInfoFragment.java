@@ -19,18 +19,21 @@ import com.example.erpproject.repository.VacationRepository;
 
 public class VacationInfoFragment extends Fragment {
     private static final String ARG_VACATION_ID = "vacation_id";
+    private static final String ARG_ADMIN_ID = "Admin_Id";
 
     private TextView nameView, idView, vacationDurationView,statusView,dateAppliedView,reasonView, lastVacationView, VacationDaysLeftView;
 
     private Button ViewWorkerBtn, ApproveVacationBtn, RejectVacationBtn;
     private VacationViewClass vacationViewClass;
     private int vacationId;
+    private String AdminId;
     private VacationViewModel vacationViewModel;
 
-    public static VacationInfoFragment newInstance(int vacationId) {
+    public static VacationInfoFragment newInstance(int vacationId, String AdminId) {
         VacationInfoFragment fragment = new VacationInfoFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_VACATION_ID, vacationId);
+        args.putString(ARG_ADMIN_ID, AdminId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -57,6 +60,10 @@ public class VacationInfoFragment extends Fragment {
 
         if (getArguments() != null) {
             vacationId = getArguments().getInt(ARG_VACATION_ID);
+            AdminId = getArguments().getString(ARG_ADMIN_ID);
+        } else {
+            Toast.makeText(requireContext(), "Admin or Vacation ID not found", Toast.LENGTH_SHORT).show();
+            requireActivity().finish();
         }
         new Thread(() -> {
             vacationViewClass = vacationViewModel.getSingleVacationView(vacationId);
@@ -74,7 +81,7 @@ public class VacationInfoFragment extends Fragment {
 
 
         ViewWorkerBtn.setOnClickListener(v -> {
-            WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(vacationViewClass.getWorkerId());
+            WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(vacationViewClass.getWorkerId(),AdminId);
 
             requireActivity().getSupportFragmentManager()
                     .beginTransaction()

@@ -20,18 +20,21 @@ import com.example.erpproject.repository.LoanRepository;
 
 public class LoanInfoFragment extends Fragment {
     private static final String ARG_LOAN_ID = "loan_id";
+    private static final String ARG_ADMIN_ID = "Admin_Id";
 
     private TextView nameView, idView, loanAmountView,statusView,dateAppliedView,reasonView, EffectiveSalaryView, debtView,durationView;
 
     private Button ViewWorkerBtn, ApproveLoanBtn, RejectLoanBtn;
     private LoanViewClass loanViewClass;
     private int loanId;
+    private String AdminId;
     private LoanViewModel loanViewModel;
 
-    public static LoanInfoFragment newInstance(int loanId) {
+    public static LoanInfoFragment newInstance(int loanId, String AdminId) {
         LoanInfoFragment fragment = new LoanInfoFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_LOAN_ID, loanId);
+        args.putString(ARG_ADMIN_ID, AdminId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -59,6 +62,10 @@ public class LoanInfoFragment extends Fragment {
 
         if (getArguments() != null) {
             loanId = getArguments().getInt(ARG_LOAN_ID);
+            AdminId = getArguments().getString(ARG_ADMIN_ID);
+        } else {
+            Toast.makeText(requireContext(), "Admin or Loan ID not found", Toast.LENGTH_SHORT).show();
+            requireActivity().finish();
         }
         new Thread(() -> {
             loanViewClass = loanViewModel.getSingleLoanView(loanId);
@@ -77,7 +84,7 @@ public class LoanInfoFragment extends Fragment {
 
 
         ViewWorkerBtn.setOnClickListener(v -> {
-            WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(loanViewClass.getWorkerId());
+            WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(loanViewClass.getWorkerId(),AdminId);
 
             requireActivity().getSupportFragmentManager()
                     .beginTransaction()

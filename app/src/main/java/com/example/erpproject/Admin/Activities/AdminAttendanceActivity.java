@@ -58,7 +58,7 @@ public class AdminAttendanceActivity extends AppCompatActivity {
         adapter.setOnAttendanceClickListener(new AttendanceAdapter.OnAttendanceClickListener() {
             @Override
             public void onAttendanceClicked(String workerId) {
-                WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(workerId);
+                WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(workerId, AdminId);
 
                 getSupportFragmentManager()
                         .beginTransaction()

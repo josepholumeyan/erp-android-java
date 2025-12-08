@@ -75,6 +75,15 @@ public class WorkerRepository {
         });
     }
 
+    public Salary getSalaryRecordForWorker(final String workerId) {
+        return salaryDao.getSalaryRecordForWorker(workerId);
+    }
+
+    public void updateSalary(final Salary salary) {
+        salaryDao.update(salary);
+    }
+
+
     public void update(final Worker worker) {
         executorService.execute(() -> workerDao.updateWorker(worker));
     }

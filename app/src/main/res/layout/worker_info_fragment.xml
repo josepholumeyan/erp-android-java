@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CC000000"
-    android:padding="20dp">
+    android:background="#FF000000"
+    android:padding="20dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
 
     <TextView
         android:id="@+id/info_worker_name"
@@ -56,12 +60,26 @@
         android:id="@+id/delete_worker_btn"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#EF2C2C"
         android:text="@string/delete_worker"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_worker_btn" />
+
+    <Button
+        android:id="@+id/update_worker_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#2C5DEF"
+        android:text="@string/update_worker"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worker_attendanceScore_view" />
 
     <ImageView
         android:id="@+id/Worker_image"
@@ -123,7 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="$1,000"
+        android:text="@string/_1_000"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/info_worker_salary"
@@ -157,7 +175,7 @@
         android:id="@+id/attendance_score_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Attendance Score"
+        android:text="@string/attendance_score"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold|italic"

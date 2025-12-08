@@ -52,7 +52,7 @@ public class AdminLoanActivity extends AppCompatActivity {
             @Override
             public void onLoanClicked(int loanId) {
 
-                LoanInfoFragment fragment = LoanInfoFragment.newInstance(loanId);
+                LoanInfoFragment fragment = LoanInfoFragment.newInstance(loanId, AdminId);
 
                 getSupportFragmentManager()
                         .beginTransaction()

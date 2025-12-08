@@ -41,6 +41,7 @@ public class LoanApplicationBottomSheet extends BottomSheetDialogFragment {
         new Thread(() -> {
             Worker worker = worker_repo.getWorkerById(workerId);
             Loan last_loan= repo.getLastLoanRecord(workerId);
+            assert getActivity() != null;
             getActivity().runOnUiThread(() -> {
                 String salary_out = "SALARY: " + "$" + worker.getSalary();
                 String debt_out = "DEBT: " + "$" + worker.getDebt();
@@ -85,7 +86,6 @@ public class LoanApplicationBottomSheet extends BottomSheetDialogFragment {
             }
             catch (NumberFormatException e) {
                 Toast.makeText(requireContext(), "Please enter valid numbers", Toast.LENGTH_SHORT).show();
-                return;
             }
         });
         return view;

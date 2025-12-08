@@ -62,13 +62,21 @@ public class AdminWorkerActivity extends AppCompatActivity {
             });
             }).start();
         });
-        addWorkerButton.setOnClickListener(v -> openAddWorkerFragment());
+        addWorkerButton.setOnClickListener(v -> {
+            AddWorkerFragment fragment = AddWorkerFragment.newInstance(AdminId);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
 
         workerAdapter.setOnWorkerClickListener(new WorkerAdapter.OnWorkerClickListener() {
             @Override
             public void onWorkerClicked(String workerId) {
 
-                WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(workerId);
+                WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(workerId, AdminId);
 
                 getSupportFragmentManager()
                         .beginTransaction()
@@ -90,7 +98,7 @@ public class AdminWorkerActivity extends AppCompatActivity {
 
             navigationView.setNavigationItemSelectedListener(item -> {
                 int id = item.getItemId();
-                if (id == R.id.nav_check_attendance) {//handle loan application
+                if (id == R.id.nav_check_attendance) {
                     Intent intent = new Intent(this, AdminAttendanceActivity.class);
                     intent.putExtra("Admin_Id", AdminId);
                     startActivity(intent);

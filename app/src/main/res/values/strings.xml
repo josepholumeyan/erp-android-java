@@ -119,6 +119,11 @@
     <string name="mark_workers_absent">Mark Workers Absent</string>
     <string name="check_in_time">Check In Time</string>
     <string name="check_out_time">Check Out Time</string>
+    <string name="new_announcement">New Announcement</string>
+    <string name="add">+</string>
+    <string name="update_worker">Update Worker</string>
+    <string name="attendance_score">Attendance Score</string>
+    <string name="_1_000">$1,000</string>
 
 
 </resources>
