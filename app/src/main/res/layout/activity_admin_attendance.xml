@@ -63,6 +63,4 @@
         android:background="@android:color/white"
         app:menu="@menu/attendance_drawer_menu"
         />
-
-
 </androidx.drawerlayout.widget.DrawerLayout>

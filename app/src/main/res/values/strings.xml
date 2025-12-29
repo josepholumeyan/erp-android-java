@@ -124,6 +124,8 @@
     <string name="update_worker">Update Worker</string>
     <string name="attendance_score">Attendance Score</string>
     <string name="_1_000">$1,000</string>
+    <string name="delete_all_loans">Delete all loans</string>
+    <string name="search_for_worker">Search for worker</string>
 
 
 </resources>

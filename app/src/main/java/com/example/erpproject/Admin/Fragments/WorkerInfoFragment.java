@@ -47,7 +47,7 @@ public class WorkerInfoFragment extends Fragment {
         deleteBtn = view.findViewById(R.id.delete_worker_btn);
         updateBtn = view.findViewById(R.id.update_worker_btn);
         attendanceScoreView = view.findViewById(R.id.worker_attendanceScore_view);
-        ;
+
 
         workerViewModel = new ViewModelProvider(requireActivity()).get(WorkerViewModel.class);
 
@@ -85,8 +85,6 @@ public class WorkerInfoFragment extends Fragment {
                     .commit();
 
         });
-
-
         return view;
     }
 }

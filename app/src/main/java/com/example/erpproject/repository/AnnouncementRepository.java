@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-public class AnnouncementRepository {
+public class   AnnouncementRepository {
     private final ExecutorService executorService;
     private final AnnouncementDao announcementDao;
 

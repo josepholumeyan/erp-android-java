@@ -4,6 +4,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.erpproject.data.entity.Salary;
 import com.example.erpproject.data.entity.User;
@@ -11,11 +12,15 @@ import com.example.erpproject.data.entity.Worker;
 import com.example.erpproject.repository.UserRepository;
 import com.example.erpproject.repository.WorkerRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 public class WorkerViewModel extends AndroidViewModel {
     private final WorkerRepository repository;
     private final UserRepository userRepository;
     private final LiveData<List<Worker>> allWorkers;
+    private final MutableLiveData<List<Worker>> filteredWorkers=new MutableLiveData<>();
+
+
 
     public WorkerViewModel(@NonNull Application application) {
         super(application);
@@ -38,8 +43,8 @@ public class WorkerViewModel extends AndroidViewModel {
     }
 
     // Insert new worker
-    public void insert(Worker worker,String password,boolean isadmin,String BA) {
-        repository.insert(worker,password,isadmin,BA);
+    public void insert(Worker worker, String password, boolean isadmin, String BA) {
+        repository.insert(worker, password, isadmin, BA);
     }
 
     // Update worker
@@ -81,5 +86,9 @@ public class WorkerViewModel extends AndroidViewModel {
     public Worker getWorkerById(String id) {
         return repository.getWorkerById(id);
     }
-    public LiveData<Worker> getWorkerByIdLive(String id) {return repository.getWorkerByIdLive(id);}
+
+    public LiveData<Worker> getWorkerByIdLive(String id) {
+        return repository.getWorkerByIdLive(id);
+    }
+
 }

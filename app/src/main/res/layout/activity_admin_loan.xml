@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CB121212">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CB121212">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/loan_list"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_loan" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/loan_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_loan" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/admin_delete_laons_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#EF2C2C"
-        android:text="Delete all loans"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loan_list" />
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/admin_delete_laons_btn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="#EF2C2C"
+            android:text="@string/delete_all_loans"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loan_list" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <FrameLayout
         android:id="@+id/fragment_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

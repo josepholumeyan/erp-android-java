@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.erpproject.Admin.Adapters.WorkerAdapter;
+import com.example.erpproject.Admin.Fragments.WorkerInfoFragment;
 import com.example.erpproject.R;
 import com.example.erpproject.ViewModel.LoanViewModel;
 import com.example.erpproject.ViewModel.VacationViewModel;
@@ -79,6 +80,18 @@ public class AdminDashboardActivity extends AppCompatActivity {
             });
         }).start();
 
+        workerAdapter.setOnWorkerClickListener(new WorkerAdapter.OnWorkerClickListener() {
+            @Override
+            public void onWorkerClicked(String workerId) {
+                WorkerInfoFragment fragment = WorkerInfoFragment.newInstance(workerId, AdminId);
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, fragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
         logoutButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, AdminLoginActivity.class);
             startActivity(intent);

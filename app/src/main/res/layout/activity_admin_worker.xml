@@ -1,100 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/DrawerLayout"
-    android:background="#CB121212">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/menu_button1"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/DrawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:background="#CB121212">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/worker_drawer_button"
-            android:layout_width="84dp"
-            android:layout_height="63dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/white"
-            android:text="@string/Menu"
-            android:textAlignment="gravity"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:backgroundTint="#CDCFD1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/workers_list"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="100dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/item_worker" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_button1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/admin_add_worker_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#6BFB2B"
-        android:text="@string/add_worker"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/admin_delete_workers_btn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/admin_delete_workers_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/worker_drawer_button"
+                android:layout_width="84dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/white"
+                android:text="@string/Menu"
+                android:textAlignment="gravity"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:backgroundTint="#CDCFD1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/admin_delete_workers_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#EF2C2C"
-        android:text="@string/delete_all_workers"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/admin_add_worker_btn"
-        app:layout_constraintTop_toBottomOf="@+id/workers_list" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/workers_list"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SearchQueryInput"
+                tools:listitem="@layout/item_worker" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/admin_add_worker_btn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#6BFB2B"
+                android:text="@string/add_worker"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/admin_delete_workers_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/admin_delete_workers_btn" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/admin_delete_workers_btn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="#EF2C2C"
+                android:text="@string/delete_all_workers"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/admin_add_worker_btn"
+                app:layout_constraintTop_toBottomOf="@+id/workers_list" />
+
+            <EditText
+                android:id="@+id/SearchQueryInput"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:drawable/editbox_background_normal"
+                android:ems="10"
+                android:hint="@string/search_for_worker"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/worker_drawer_button"
+                app:layout_constraintEnd_toStartOf="@+id/worker_drawer_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/worker_drawer_button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <FrameLayout
             android:id="@+id/fragment_container"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="206dp"
+            tools:layout_editor_absoluteY="-71dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/AdminWorkerNavigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/admin_worker_drawer_menu" />
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/AdminWorkerNavigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        android:background="@android:color/white"
-        app:menu="@menu/admin_worker_drawer_menu"
-        />
+    </androidx.drawerlayout.widget.DrawerLayout>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+</FrameLayout>
